@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Search, Loader2, CheckCircle2, XCircle } from "lucide-react";
+import { Button, Card, Input } from "@geenius-ui/react-css";
+
 export default function ScannerPage() {
     const [url, setUrl] = useState("");
     const [scanning, setScanning] = useState(false);
@@ -19,23 +21,23 @@ export default function ScannerPage() {
     return (<div style={{ padding: "var(--space-6)", maxWidth: 800 }}>
         <h1 style={{ fontSize: "var(--font-size-2xl)", fontWeight: 700, marginBottom: "var(--space-6)" }}>Domain Scanner</h1>
 
-        <div className="card" style={{ padding: "var(--space-6)", marginBottom: "var(--space-6)" }}>
-            <h2 style={{ fontSize: "16px", fontWeight: 600, marginBottom: "var(--space-3)" }}>Scan a domain for SSL/TLS issues</h2>
+        <Card padding="xl" style={{ marginBottom: "var(--space-6)" }}>
+            <h2 style={{ fontSize: "16px", fontWeight: 600, marginBottom: "var(--space-3)", marginTop: 0 }}>Scan a domain for SSL/TLS issues</h2>
             <div style={{ display: "flex", gap: "var(--space-3)" }}>
-                <input type="text" value={url} onChange={e => setUrl(e.target.value)} placeholder="e.g. openclaw.dev" style={{ flex: 1, padding: "10px 16px", borderRadius: "var(--radius-sm)", border: "1px solid var(--color-border)", background: "var(--color-bg-secondary)", fontSize: "15px", fontFamily: "var(--font-mono)", color: "var(--color-text-primary)", outline: "none" }} autoFocus />
-                <button className="btn btn-primary" onClick={handleScan} disabled={scanning} style={{ paddingLeft: 24, paddingRight: 24 }}>
-                    {scanning ? <Loader2 className="spin" size={18} /> : <Search size={18} />} Scan Now
-                </button>
+                <Input value={url} onChange={e => setUrl(e.target.value)} placeholder="e.g. openclaw.dev" style={{ flex: 1, fontFamily: "var(--font-mono)" }} autoFocus />
+                <Button variant="primary" onClick={handleScan} disabled={scanning} icon={scanning ? <Loader2 className="spin" size={18} /> : <Search size={18} />} style={{ paddingLeft: 24, paddingRight: 24 }}>
+                    Scan Now
+                </Button>
             </div>
-        </div>
+        </Card>
 
         {result && (
-            <div className="card" style={{ padding: "var(--space-6)" }}>
+            <Card padding="xl">
                 <div style={{ display: "flex", alignItems: "center", gap: "var(--space-3)", marginBottom: "var(--space-6)" }}>
                     {result.valid ? <CheckCircle2 size={32} style={{ color: "var(--color-success)" }} /> : <XCircle size={32} style={{ color: "var(--color-danger)" }} />}
                     <div>
-                        <h2 style={{ fontSize: "20px", fontWeight: 700, fontFamily: "var(--font-mono)" }}>{result.domain}</h2>
-                        <p style={{ color: "var(--color-success)", fontWeight: 600 }}>Connection is secure</p>
+                        <h2 style={{ fontSize: "20px", fontWeight: 700, fontFamily: "var(--font-mono)", margin: 0 }}>{result.domain}</h2>
+                        <p style={{ color: "var(--color-success)", fontWeight: 600, margin: '4px 0 0 0' }}>Connection is secure</p>
                     </div>
                 </div>
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "var(--space-4)" }}>
@@ -56,7 +58,7 @@ export default function ScannerPage() {
                         <div className="mono" style={{ color: "var(--color-text-secondary)" }}>{result.validTo}</div>
                     </div>
                 </div>
-            </div>
+            </Card>
         )}
         <style>{`@keyframes spin { 100% { transform: rotate(360deg); } } .spin { animation: spin 1s linear infinite; }`}</style>
     </div>);
