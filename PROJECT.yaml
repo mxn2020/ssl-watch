@@ -1,5 +1,6 @@
-id: 4f0d619b-bf95-40b9-9ed9-6f994f116320
 name: ssl-watch
+project_scope: main
+project_type: standalone
 description: React + TypeScript + Vite
 tier: prototype
 lane: oss
@@ -9,5 +10,6 @@ stack: [typescript, react, convex, tailwind, vite]
 repo: "https://github.com/mxn2020/ssl-watch"
 deploy_url: null
 last_active: 2026-02-25
-tags: []
-notes: 
+tags: [ssl, certificates, monitoring, security, expiry, alerts, https]
+notes: null
+id: 4f0d619b-bf95-40b9-9ed9-6f994f116320
