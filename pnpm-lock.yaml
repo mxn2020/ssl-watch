@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@geenius-ui/react-css':
+        specifier: ^0.1.2
+        version: 0.1.5(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@vercel/analytics':
         specifier: ^1.6.1
         version: 1.6.1(react@19.2.4)
@@ -76,8 +79,8 @@ importers:
         specifier: ^0.4.24
         version: 0.4.26(eslint@9.39.3)
       globals:
-        specifier: ^16.5.0
-        version: 16.5.0
+        specifier: ^17.4.0
+        version: 17.4.0
       jsdom:
         specifier: ^28.1.0
         version: 28.1.0
@@ -436,6 +439,15 @@ packages:
     peerDependenciesMeta:
       '@noble/hashes':
         optional: true
+
+  '@geenius-ui/react-css@0.1.5':
+    resolution: {integrity: sha512-6hJalb3YDfC2JcOYqVuZX8XLu9vtJ77qVKNjiGmKyoUrEqvTwb7Uk5s2rse7Pi8+PfTpzrGsljh7Iy1Hfrl+/Q==}
+    peerDependencies:
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+
+  '@geenius-ui/shared@0.1.5':
+    resolution: {integrity: sha512-OH9mKnEa1HleqJGJd7YASZe+vn9Uil/aFwqxKYsAtC2pJg/uaGWwWasElAb/n2YKsMOhQOVH+FR6lucPhU6rXw==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -1186,8 +1198,8 @@ packages:
     resolution: {integrity: sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ==}
     engines: {node: '>=18'}
 
-  globals@16.5.0:
-    resolution: {integrity: sha512-c/c15i26VrJ4IRt5Z89DnIzCGDn9EcebibhAOjw5ibqEHsE1wLUgkPn9RDmNcUKyU87GeaL633nyJ+pplFR2ZQ==}
+  globals@17.4.0:
+    resolution: {integrity: sha512-hjrNztw/VajQwOLsMNT1cbJiH2muO3OROCHnbehc8eY5JyD2gqz4AcMHPqgaOR59DjgUjYAYLeH699g/eWi2jw==}
     engines: {node: '>=18'}
 
   has-flag@4.0.0:
@@ -2067,6 +2079,15 @@ snapshots:
 
   '@exodus/bytes@1.14.1': {}
 
+  '@geenius-ui/react-css@0.1.5(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@geenius-ui/shared': 0.1.5
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@geenius-ui/shared@0.1.5': {}
+
   '@humanfs/core@0.19.1': {}
 
   '@humanfs/node@0.16.7':
@@ -2788,7 +2809,7 @@ snapshots:
 
   globals@14.0.0: {}
 
-  globals@16.5.0: {}
+  globals@17.4.0: {}
 
   has-flag@4.0.0: {}
 
